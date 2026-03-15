@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct MetronomeApp: App {
+    @State private var engine = MetronomeEngine()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(engine)
         }
     }
 }

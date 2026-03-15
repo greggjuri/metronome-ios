@@ -3,23 +3,26 @@
 ## Current Sprint: Phase 1 — Core Metronome
 
 ### In Progress
-- [ ] Project setup and scaffold
+
+*(none)*
 
 ### Up Next
-- [ ] `01-init-core-metronome.md` - MetronomeEngine, AudioEngine, basic UI, beat indicator
+
+*(none for Phase 1)*
 
 ---
 
 ## Recently Completed
 
-*(nothing yet — project just started)*
+- [x] `01-init-core-metronome.md` - MetronomeEngine, AudioEngine, basic UI, beat indicator (2026-03-14)
+- [x] Project setup and scaffold (2026-03-14)
 
 ---
 
 ## Backlog
 
 ### Phase 1 - Core Metronome
-- [ ] `01-init-core-metronome.md` - BPM state, click audio, start/stop, 4-beat indicator
+- [x] `01-init-core-metronome.md` - BPM state, click audio, start/stop, 4-beat indicator ✓
 
 ### Phase 2 - BPM Input
 - [ ] `02-init-bpm-input.md` - Number pad, tap tempo, +/- buttons
@@ -56,7 +59,7 @@
 
 ---
 
-*Last updated: 2026-03-14 (project initialised)*
+*Last updated: 2026-03-14 (Phase 1 core metronome complete — pending device testing)*
 
 ---
 

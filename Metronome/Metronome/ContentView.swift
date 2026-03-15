@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(MetronomeEngine.self) private var engine
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        VStack(spacing: 40) {
+            BeatIndicator(currentBeat: engine.currentBeat, isPlaying: engine.isPlaying)
+            BPMDisplay(bpm: engine.bpm)
+            ControlButton(isPlaying: engine.isPlaying) {
+                engine.isPlaying ? engine.stop() : engine.start()
+            }
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+        .environment(MetronomeEngine())
 }
