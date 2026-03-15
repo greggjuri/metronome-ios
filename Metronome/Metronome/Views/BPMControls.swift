@@ -25,9 +25,9 @@ struct BPMControls: View {
         } label: {
             Image(systemName: systemName)
                 .font(.title2)
-                .frame(minWidth: 60, minHeight: 60)
+                .padding(16)
         }
-        .buttonStyle(.bordered)
+        .glassEffect(.regular.interactive())
         .simultaneousGesture(
             LongPressGesture(minimumDuration: 0.5)
                 .onEnded { _ in

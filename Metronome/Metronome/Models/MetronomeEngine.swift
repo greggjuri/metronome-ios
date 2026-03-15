@@ -5,6 +5,7 @@
 
 import Foundation
 import Observation
+import UIKit
 
 @Observable
 class MetronomeEngine {
@@ -17,11 +18,15 @@ class MetronomeEngine {
     var beatsPerBar: Int = 4
 
     private var audioEngine = AudioEngine()
+    private let heavyHaptic = UIImpactFeedbackGenerator(style: .heavy)
+    private let lightHaptic = UIImpactFeedbackGenerator(style: .light)
 
     // MARK: - Public
 
     func start() {
         setBPM(bpm)
+        heavyHaptic.prepare()
+        lightHaptic.prepare()
         audioEngine.start(bpm: bpm, beatsPerBar: beatsPerBar) { [weak self] beat in
             self?.beatFired(beat: beat)
         }
@@ -48,7 +53,10 @@ class MetronomeEngine {
 
     private func beatFired(beat: Int) {
         DispatchQueue.main.async { [weak self] in
-            self?.currentBeat = beat
+            guard let self else { return }
+            self.currentBeat = beat
+            if beat == 0 { self.heavyHaptic.impactOccurred() }
+            else         { self.lightHaptic.impactOccurred() }
         }
     }
 }

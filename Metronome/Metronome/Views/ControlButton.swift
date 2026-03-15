@@ -13,9 +13,12 @@ struct ControlButton: View {
         Button(action: action) {
             Text(isPlaying ? "Stop" : "Start")
                 .font(.title2)
-                .frame(minWidth: 60, minHeight: 60)
+                .padding(.horizontal, 40)
+                .padding(.vertical, 16)
         }
-        .buttonStyle(.borderedProminent)
+        .tint(isPlaying ? .red : .accentColor)
+        .glassEffect(.regular.interactive())
+        .animation(.easeInOut(duration: 0.2), value: isPlaying)
     }
 }
 

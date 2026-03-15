@@ -12,6 +12,7 @@ struct ContentView: View {
 
     var body: some View {
         VStack(spacing: 40) {
+            Spacer()
             BeatIndicator(currentBeat: engine.currentBeat, isPlaying: engine.isPlaying)
             BPMDisplay()
             BPMControls()
@@ -19,7 +20,9 @@ struct ContentView: View {
             ControlButton(isPlaying: engine.isPlaying) {
                 engine.isPlaying ? engine.stop() : engine.start()
             }
+            Spacer()
         }
+        .padding(.bottom)
     }
 }
 

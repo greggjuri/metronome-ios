@@ -17,9 +17,10 @@ struct TapTempoButton: View {
         } label: {
             Text("Tap")
                 .font(.title2)
-                .frame(minWidth: 60, minHeight: 60)
+                .padding(.horizontal, 24)
+                .padding(.vertical, 16)
         }
-        .buttonStyle(.bordered)
+        .glassEffect(.regular.interactive())
     }
 
     // MARK: - Tap Logic

@@ -19,6 +19,8 @@ struct BPMPad: View {
 
             Text(inputString.isEmpty ? "0" : inputString)
                 .font(.system(size: 60, weight: .thin, design: .rounded))
+                .contentTransition(.numericText())
+                .animation(.default, value: inputString)
                 .frame(maxWidth: .infinity)
 
             digitGrid
@@ -71,7 +73,7 @@ struct BPMPad: View {
                 .font(.title)
                 .frame(maxWidth: .infinity, minHeight: 50)
         }
-        .buttonStyle(.bordered)
+        .glassEffect(.regular.interactive())
     }
 
     private var cancelButton: some View {
@@ -82,8 +84,8 @@ struct BPMPad: View {
                 .font(.title2)
                 .frame(maxWidth: .infinity, minHeight: 50)
         }
-        .buttonStyle(.bordered)
         .tint(.red)
+        .glassEffect(.regular.interactive())
     }
 
     private var backspaceButton: some View {
@@ -95,7 +97,7 @@ struct BPMPad: View {
                 .font(.title2)
                 .frame(maxWidth: .infinity, minHeight: 50)
         }
-        .buttonStyle(.bordered)
+        .glassEffect(.regular.interactive())
     }
 
     private var confirmButton: some View {
@@ -109,7 +111,7 @@ struct BPMPad: View {
                 .font(.title)
                 .frame(maxWidth: .infinity, minHeight: 50)
         }
-        .buttonStyle(.borderedProminent)
+        .glassEffect(.regular.interactive())
     }
 }
 

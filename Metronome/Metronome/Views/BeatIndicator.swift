@@ -11,14 +11,23 @@ struct BeatIndicator: View {
     let beatsPerBar: Int = 4
 
     var body: some View {
-        HStack(spacing: 16) {
+        HStack(spacing: 20) {
             ForEach(0..<beatsPerBar, id: \.self) { beat in
+                let active = isPlaying && beat == currentBeat
+                let isDownbeat = beat == 0
+
                 Circle()
                     .fill(fillColor(for: beat))
-                    .frame(width: beat == 0 ? 20 : 16, height: beat == 0 ? 20 : 16)
+                    .frame(width: isDownbeat ? 20 : 16, height: isDownbeat ? 20 : 16)
+                    .scaleEffect(active ? 1.3 : 1.0)
+                    .shadow(
+                        color: active ? .accentColor.opacity(0.8) : .clear,
+                        radius: active ? 8 : 0
+                    )
             }
         }
-        .animation(.easeOut(duration: 0.05), value: currentBeat)
+        .animation(.spring(response: 0.15, dampingFraction: 0.5), value: currentBeat)
+        .animation(.easeOut(duration: 0.3), value: isPlaying)
     }
 
     private func fillColor(for beat: Int) -> Color {
