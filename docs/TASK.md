@@ -37,7 +37,7 @@
 
 ## Completed
 
-*(updated as features ship)*
+- [x] `01-init-core-metronome.md` - Phase 1 core metronome (2026-03-14, device tested)
 
 ---
 
@@ -59,7 +59,7 @@
 
 ---
 
-*Last updated: 2026-03-14 (Phase 1 core metronome complete — pending device testing)*
+*Last updated: 2026-03-14 (Phase 1 complete — device testing passed)*
 
 ---
 
