@@ -1,6 +1,6 @@
 # Metronome iOS - Task Tracker
 
-## Current Sprint: Phase 1 — Core Metronome
+## Current Sprint: Phase 2 — BPM Input
 
 ### In Progress
 
@@ -14,6 +14,7 @@
 
 ## Recently Completed
 
+- [x] `02-init-bpm-input.md` - Number pad, tap tempo, +/- buttons (2026-03-14, pending device testing)
 - [x] `01-init-core-metronome.md` - MetronomeEngine, AudioEngine, basic UI, beat indicator (2026-03-14)
 - [x] Project setup and scaffold (2026-03-14)
 
@@ -25,7 +26,7 @@
 - [x] `01-init-core-metronome.md` - BPM state, click audio, start/stop, 4-beat indicator ✓
 
 ### Phase 2 - BPM Input
-- [ ] `02-init-bpm-input.md` - Number pad, tap tempo, +/- buttons
+- [x] `02-init-bpm-input.md` - Number pad, tap tempo, +/- buttons ✓
 
 ### Phase 3 - Polish & iOS 26 UI
 - [ ] `03-init-ui-polish.md` - Liquid glass styling, animations, haptics, dark/light mode
@@ -59,7 +60,7 @@
 
 ---
 
-*Last updated: 2026-03-14 (Phase 1 complete — device testing passed)*
+*Last updated: 2026-03-14 (Phase 2 BPM input complete — pending device testing)*
 
 ---
 

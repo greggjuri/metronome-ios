@@ -36,6 +36,12 @@ class MetronomeEngine {
 
     func setBPM(_ newBPM: Double) {
         bpm = min(240, max(30, newBPM))
+        if isPlaying {
+            audioEngine.stop()
+            audioEngine.start(bpm: bpm, beatsPerBar: beatsPerBar) { [weak self] beat in
+                self?.beatFired(beat: beat)
+            }
+        }
     }
 
     // MARK: - Private

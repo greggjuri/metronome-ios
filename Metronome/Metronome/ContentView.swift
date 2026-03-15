@@ -13,7 +13,9 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 40) {
             BeatIndicator(currentBeat: engine.currentBeat, isPlaying: engine.isPlaying)
-            BPMDisplay(bpm: engine.bpm)
+            BPMDisplay()
+            BPMControls()
+            TapTempoButton()
             ControlButton(isPlaying: engine.isPlaying) {
                 engine.isPlaying ? engine.stop() : engine.start()
             }

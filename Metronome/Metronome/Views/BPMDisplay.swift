@@ -6,19 +6,25 @@
 import SwiftUI
 
 struct BPMDisplay: View {
-    let bpm: Double
+    @Environment(MetronomeEngine.self) private var engine
+    @State private var showingPad = false
 
     var body: some View {
         VStack(spacing: 4) {
-            Text("\(Int(bpm))")
+            Text("\(Int(engine.bpm))")
                 .font(.system(size: 80, weight: .thin, design: .rounded))
             Text("BPM")
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }
+        .onTapGesture { showingPad = true }
+        .sheet(isPresented: $showingPad) {
+            BPMPad()
+        }
     }
 }
 
 #Preview {
-    BPMDisplay(bpm: 120)
+    BPMDisplay()
+        .environment(MetronomeEngine())
 }
